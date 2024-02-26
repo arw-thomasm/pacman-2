@@ -21,6 +21,7 @@ COPY . .
 
 RUN chgrp -R 0 . \
  && chmod -R g=u . \
+ && mkdir /.npm \
  && chgrp -R 0 /.npm \
  && chmod -R g=u /.npm
 
