@@ -19,6 +19,9 @@ RUN npm ci --only=production
 # Refer to .dockerignore to exclude content as needed
 COPY . .
 
+RUN chgrp -R 0 . \
+ && chmod -R g=u .
+
 # Expose port 8080
 EXPOSE 8080
 
