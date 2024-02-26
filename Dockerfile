@@ -20,7 +20,9 @@ RUN npm ci --only=production
 COPY . .
 
 RUN chgrp -R 0 . \
- && chmod -R g=u .
+ && chmod -R g=u . \
+ && chgrp -R 0 /.npm \
+ && chmod -R g=u /.npm
 
 # Expose port 8080
 EXPOSE 8080
